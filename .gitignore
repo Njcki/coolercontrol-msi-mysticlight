@@ -1,0 +1,11 @@
+/target
+# runtime files created by the plugin or the tools
+config.json
+/backups
+*.log
+*.bin
+# editor / OS cruft
+.idea/
+.vscode/
+*.swp
+.DS_Store

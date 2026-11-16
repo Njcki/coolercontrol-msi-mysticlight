@@ -1,0 +1,9 @@
+# CoolerControl Service Plugin Manifest
+id = "msi_mysticlight"
+type = "device"
+description = "ARGB headers (JRAINBOW1/2) of MSI Mystic Light motherboards (USB 0db0:0076, 185-byte protocol): fixed color, off and the board's hardware effects."
+version = "0.1.0"
+address = "/run/coolercontrol-plugin-msi_mysticlight.sock"
+executable = "msi_mysticlight"
+# root is needed to send HID feature reports to the raw hidraw device
+privileged = true

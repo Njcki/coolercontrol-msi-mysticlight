@@ -1,0 +1,35 @@
+[package]
+name = "msi_mysticlight"
+version = "0.1.0"
+description = "CoolerControl device service plugin for the ARGB (JRAINBOW) headers of MSI Mystic Light 185-byte motherboards"
+license = "GPL-3.0-or-later"
+readme = "README.md"
+rust-version = "1.86.0"
+edition = "2024"
+
+[dependencies]
+log = "0.4"
+env_logger = "0.11"
+systemd-journal-logger = "2.2"
+clap = { version = "4.5", features = ["derive"] }
+anyhow = "1.0"
+tonic = "0.14"
+prost = "0.14"
+tonic-prost = "0.14"
+tokio = { version = "1", features = ["macros", "rt", "signal", "fs", "net"] }
+tokio-stream = { version = "0.1", features = ["net"] }
+tokio-util = "0.7"
+libc = "0.2"
+
+[build-dependencies]
+tonic-prost-build = "0.14"
+
+[profile.release]
+strip = "symbols"
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+
+[dev-dependencies]
+hyper-util = { version = "0.1", features = ["tokio"] }
+tower = "0.5"
